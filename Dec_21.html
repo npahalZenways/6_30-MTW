@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		p{
+			color: yellow !important;
+		}
+		p.first#myPara{
+			background-color: blue;
+			color: white;
+		}
+		#myPara{
+			font-size: 24px;
+		}
+		/*select that p tag which lies inside div*/
+		div p{
+			background-color: red;
+			color: blue !important;
+		}
+		/*select that p where parent is div*/
+		div>p{
+			background-color: black;
+			color: grey
+		}
+	</style>
+	<!-- <link rel="stylesheet" type="text/css" href="./styles.css"> -->
+</head>
+<body>
+	<p style="color:red;">This is paragraph</p>
+	<div class="first">Hello</div>
+	<div>Hello from second tag</div>
+	<p class="first">Second paragraph</p>
+	<p class="first" id="myPara">Third</p>
+	<div>
+		<p>Paragraph inside div</p>
+		<section>
+			<p>Para inside nested div</p>
+		</section>
+	</div>
+	
+</body>
+</html>
