@@ -1,0 +1,1 @@
+var hello : number = 10;

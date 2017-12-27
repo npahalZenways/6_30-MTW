@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<div class="col-md-4 col-sm-12">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div class="col-md-3 col-sm-12">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+		<div>
+			<p>Buttons:</p>
+			<button class="btn btn-primary">Blue</button>
+			<button class="btn btn-success">Green</button>
+			<button class="btn btn-danger">Red</button>
+			<button class="btn btn-warning">Yellowish orange</button>
+			<button class="btn btn-info">Light blue</button>
+			<button class="btn btn-link">Blue text</button>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">My card</div>
+				<div class="card-body">
+					<h3 class="card-title">Card title</h3>
+					<h5 class="card-subtitle text-success">Card sub-title</h5>
+					<p class="card-text"> Hello this is a card</p>
+				</div>
+				<div class="card-footer"><button class="btn btn-success float-right">Accept</button><button class="btn btn-danger mx-1 float-right">Reject</button></div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img src="https://www.w3schools.com/w3css/img_fjords.jpg" class="card-img-top">
+				<div class="card-body">
+					<h3 class="card-title">Card title</h3>
+					<h5 class="card-subtitle text-success">Card sub-title</h5>
+					<p class="card-text"> Hello this is a card</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<!-- <img src="https://www.w3schools.com/w3css/img_fjords.jpg"> -->
+	<br><br><br>
+	<div class="dropdown">
+		<button class="btn btn-succes dropdown-toggle" id="mybtn" data-toggle="dropdown">Dropdown</button>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="#">Option 1</a>
+			<a class="dropdown-item" href="#">Option 2</a>
+			<a class="dropdown-item">Option 3</a>
+		</div>
+	</div>
+	<br><br><br>
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<!-- popperjs -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+	<!-- bootstrap js -->
+	<script type="text/javascript" src="./js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$('.dropdown-toggle').dropdown()
+	</script>
+</body>
+</html>
