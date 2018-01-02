@@ -1,0 +1,7 @@
+{
+	"compilerOptions":{
+		"sourceMap":true,
+		"removeComments":false,
+		"target":"es5"
+	}
+}
