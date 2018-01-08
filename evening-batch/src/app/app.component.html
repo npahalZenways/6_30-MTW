@@ -1,24 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links, get some help from them: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-<app-registration></app-registration>
-<app-registration></app-registration>
-<app-registration></app-registration>
-<app-registration></app-registration>
+<p [class]="blue">Title is : {{title}}</p>
 
+<input type="text" #name (click)="print(name.value)"><!-- here name is local template variable-->
+<!-- Event binding using () -->
+<button (click)="print(name.value)">Click</button>
+<!-- Property binding using [] -->
+<img [src]="imgsrc">
+
+<!-- Two-binding using [(ngModel)] -->
+<input type="text" [(ngModel)]="title">
+
+<input type="text" [(ngModel)]="test.new"> {{test.new}}
+<a [attr.href]="link">Link</a>
+<p [style.color]="blue">hello</p>
+<!-- built-in directives -->
+<!-- ngClass directive -->
+<p [ngClass]="{'myClass': title == 'app', 'mySecClass': title == 'myApp'}">ng Class binding</p>
+
+<!-- *ngIf directive -->
+<div *ngIf="title == 'app'; else elseBlock">
+  <p>This is true</p>
+</div>
+<ng-template #elseBlock>
+  <div>
+    <p>This is false</p>
+  </div>
+</ng-template>
+<table>
+  <tr>
+    <th>S.no</th>
+    <th>Name</th>
+    <th>Phone</th>
+  </tr>
+  <tr *ngFor="let n of arr; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{n.name}}</td>
+    <td>{{n.phone}}</td>
+  </tr>
+</table>
+<table *ngFor = "let array of multiArr">
+  <tr>
+    <th>Number</th>
+  </tr>
+  <tr *ngFor="let num of array">
+    <td>{{num}}</td>
+  </tr>
+</table>
+
+<!-- ngSwitch directive -->
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'app'">This is equal to app</p>
+  <p *ngSwitchCase="'myApp'">This is equal to MyApp</p>
+  <p *ngSwitchDefault>This is not equal to anything</p>
+</div>
