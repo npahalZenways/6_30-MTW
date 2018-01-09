@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-start',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: ['.red{color: blue}','.myClass{color: yellow; background-color: green;}',' .mySecClass{color: white;background-color: black;}']
 })
 export class AppComponent {
   title = 'My evening batch';

@@ -1,3 +1,26 @@
 <p>
   registration works! Hello this is new component
 </p>
+<!-- Received name from parent component -->
+<p>Received input is {{name}}</p>
+
+<!-- Angular forms -->
+<form #myForm="ngForm" (ngSubmit)="submit(myForm); myForm.form.markAsUntouched()">
+  <label>First name: </label> <input type="text" name="fname" #fname="ngModel" [(ngModel)]="formInfo.fname" minlength="5" required>
+  <div *ngIf="fname.errors">
+    <small [style.color]="'red'" *ngIf="fname.errors.required && fname.touched">This field is required</small>
+    <small [style.color]="'red'" *ngIf="fname.errors.minlength && fname.touched">Minimum 5 characters required</small>
+  </div>
+  <br><br>
+  <label>Last name: </label> <input type="text" name="lname" #lname="ngModel" [(ngModel)]="formInfo.lname" required>
+  <div *ngIf="lname.errors">
+    <small [style.color]="'red'" *ngIf="lname.errors.required && lname.touched">This is required</small>
+  </div>
+  <br><br>
+  <label>Phone: </label><input type="text" name="phone" #phone="ngModel" maxlength="10" [(ngModel)]="formInfo.phone" required pattern="^[987][\d]{9}$">
+  <div *ngIf="phone.errors">
+    <small [style.color]="'red'" *ngIf="phone.errors.pattern && phone.dirty">This is invalid till now</small>
+  </div>
+  <button type="submit">Submit</button>
+  <button type="button">Cancel</button>
+</form>
