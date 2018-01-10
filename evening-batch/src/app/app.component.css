@@ -1,5 +1,6 @@
-.red{
-    color: blue;
+.active{
+    color: white;
+    background-color: blue
 }
 .myClass{
     color: yellow;

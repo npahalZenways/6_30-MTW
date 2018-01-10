@@ -1,56 +1,7 @@
-<p [class]="blue">Title is : {{title}}</p>
+<button [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/layout">Layout</button>
+<button routerLinkActive="active" routerLink="/register">Registration</button>
+<button [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/layout/child/98765">Child</button>
 
-<input type="text" #name (click)="print(name.value)"><!-- here name is local template variable-->
-<!-- Event binding using () -->
-<button (click)="print(name.value)">Click</button>
-<!-- Property binding using [] -->
-<img [src]="imgsrc">
+<input type="text" #route><button (click)="routethis(route.value)">Navigate</button>
 
-<!-- Two-binding using [(ngModel)] -->
-<input type="text" [(ngModel)]="title">
-
-<input type="text" [(ngModel)]="test.new"> {{test.new}}
-<a [attr.href]="link">Link</a>
-<p [style.color]="blue">hello</p>
-<!-- built-in directives -->
-<!-- ngClass directive -->
-<p [ngClass]="{'myClass': title == 'app', 'mySecClass': title == 'myApp'}">ng Class binding</p>
-
-<!-- *ngIf directive -->
-<div *ngIf="title == 'app'; else elseBlock">
-  <p>This is true</p>
-</div>
-<ng-template #elseBlock>
-  <div>
-    <p>This is false</p>
-  </div>
-</ng-template>
-<table>
-  <tr>
-    <th>S.no</th>
-    <th>Name</th>
-    <th>Phone</th>
-  </tr>
-  <tr *ngFor="let n of arr; let i = index">
-    <td>{{i+1}}</td>
-    <td>{{n.name}}</td>
-    <td>{{n.phone}}</td>
-  </tr>
-</table>
-<table *ngFor = "let array of multiArr">
-  <tr>
-    <th>Number</th>
-  </tr>
-  <tr *ngFor="let num of array">
-    <td>{{num}}</td>
-  </tr>
-</table>
-
-<!-- ngSwitch directive -->
-<div [ngSwitch]="title">
-  <p *ngSwitchCase="'app'">This is equal to app</p>
-  <p *ngSwitchCase="'myApp'">This is equal to MyApp</p>
-  <p *ngSwitchDefault>This is not equal to anything</p>
-</div>
-<!-- child component selector -->
-<app-register [name] = "'blue'"></app-register>
+<router-outlet></router-outlet>

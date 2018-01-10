@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +13,7 @@ export class RegistrationComponent implements OnInit {
     lname: '',
     phone: ''
   }
+  @Output() onOutput = new EventEmitter();
   constructor() { }
   submit(form){
     // console.log(form);
@@ -24,6 +25,7 @@ export class RegistrationComponent implements OnInit {
      // console.log(`First name is ${this.formInfo.fname} and last name is ${this.formInfo.lname}`)
   }
   ngOnInit() {
+    this.onOutput.emit(this.formInfo);
   }
 
 }
