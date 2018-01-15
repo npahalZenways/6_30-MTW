@@ -1,0 +1,5 @@
+<input type="text" name="uname" #uname placeholder="Username">
+<br><br>
+<input type="password" name="password" #password placeholder="password">
+<br><br>
+<button (click)="login(uname.value, password.value)">Submit</button>
