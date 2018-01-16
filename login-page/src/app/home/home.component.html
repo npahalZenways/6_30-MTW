@@ -4,3 +4,29 @@
 <button (click)="callCustomApi()">Custom</button>
 <button (click)="callApi()">Call</button>
 <button (click)="logout()">logout</button>
+<br><br>
+
+{{name | uppercase}}
+{{name | lowercase}}
+My birthday is : {{date | date | uppercase}}
+<br>
+<br>
+<!-- format : '{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}' -->
+{{num | number:'1.5-8'}}
+<br>
+<input type="text" [(ngModel)]="query">
+<br>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Phone</th>
+  </tr>
+  <tr *ngFor="let person of array | filter:query; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{person.name}}</td>
+    <td>{{person.phone}}</td>
+  </tr>
+</table>
+<br><br>
+<p appMyDirectve> This is my para</p>

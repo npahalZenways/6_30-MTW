@@ -7,15 +7,26 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from "./login.service";
 import { HomeChildComponent } from './home-child/home-child.component';
 import { HttpModule } from "@angular/http";
-
+import { CommonModule } from "@angular/common";
+import { FilterPipe } from "./filterpipe";
+import { FormsModule } from "@angular/forms";
+import { MyPipePipe } from './my-pipe.pipe';
+import { MyDirectveDirective } from './my-directve.directive';
+import { NewCopComponent } from './new-cop/new-cop.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    HomeChildComponent
+    HomeChildComponent,
+    FilterPipe,
+    MyPipePipe,
+    MyDirectveDirective,
+    NewCopComponent
   ],
   imports: [
+    FormsModule,
+    CommonModule,
     BrowserModule,
     HttpModule,    
     RouterModule.forRoot([{

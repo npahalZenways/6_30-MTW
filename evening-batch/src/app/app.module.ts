@@ -7,17 +7,22 @@ import { LayoutComponent } from "./layout/layout.component";
 import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule } from "@angular/router";
 import { ChildComponent } from "./child/child";
+import { HttpCom } from "./http/http";
+import { HttpModule } from "@angular/http";
+import { LoginService } from "./test.service";
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LayoutComponent,
-    ChildComponent
+    ChildComponent,
+    HttpCom
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
+    HttpModule,
     RouterModule.forRoot([{
       path: '',
       redirectTo: 'layout',
@@ -39,7 +44,7 @@ import { ChildComponent } from "./child/child";
       component: RegistrationComponent
     }])
   ],
-  providers: [],
+  providers: [LoginService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
